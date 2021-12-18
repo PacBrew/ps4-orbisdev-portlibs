@@ -1,6 +1,6 @@
 # Maintainer: cpasjuste <cpasjuste@gmail.com>
 
-pkgname=ps4-tinyxml2
+pkgname=ps4-orbisdev-tinyxml2
 pkgver=9.0.0
 pkgrel=1
 pkgdesc='A simple, small, efficient, C++ XML parser that can be easily integrated into other programs'
@@ -9,14 +9,14 @@ url='http://leethomason.github.io/tinyxml2/'
 license=('apache')
 options=(!strip libtool staticlibs)
 source=( "https://github.com/leethomason/tinyxml2/archive/${pkgver}.tar.gz" )
-makedepends=('ps4-pkg-config' 'ps4-toolchain-vars')
 sha256sums=('cc2f1417c308b1f6acc54f88eb70771a0bf65f76282ce5c40e54cfe52952702c')
-groups=('ps4-portlibs')
+makedepends=('ps4-orbisdev-pkg-config' 'ps4-orbisdev-vars')
+groups=('ps4-orbisdev-portlibs')
 
 build() {
   cd tinyxml2-$pkgver
 
-  source /opt/pacbrew/ps4/toolchain/ps4vars.sh
+  source /opt/pacbrew/ps4/orbisdev/ps4vars.sh
 
   mkdir build && cd build
 

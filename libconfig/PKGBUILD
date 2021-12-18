@@ -1,6 +1,6 @@
 # Maintainer:  cpasjuste <cpasjuste@gmail.com>
 
-pkgname=ps4-libconfig
+pkgname=ps4-orbisdev-libconfig
 pkgver=1.7.3
 pkgrel=1
 pkgdesc='C/C++ Configuration File Library'
@@ -9,23 +9,23 @@ url="https://www.hyperrealm.com/libconfig/libconfig.html"
 license=('LGPL')
 options=(!strip libtool staticlibs)
 source=("https://github.com/hyperrealm/libconfig/releases/download/v$pkgver/libconfig-$pkgver.tar.gz" "libconfig.patch")
-makedepends=('ps4-pkg-config' 'ps4-toolchain-vars')
+makedepends=('ps4-orbisdev-pkg-config' 'ps4-orbisdev-vars')
 sha256sums=(
   '545166d6cac037744381d1e9cc5a5405094e7bfad16a411699bcff40bbb31ee7'
   '1951a74d027d6f7e5295b9fb98f49322b38f77da3029611daa96864b40ad72af'
 )
-groups=('ps4-portlibs')
+groups=('ps4-orbisdev-portlibs')
 
 build() {
   cd libconfig-$pkgver
 
-  source /opt/pacbrew/ps4/toolchain/ps4vars.sh
+  source /opt/pacbrew/ps4/orbisdev/ps4vars.sh
   
   patch -Np1 -i "$srcdir"/libconfig.patch
 
   ./configure --prefix="${ORBISDEV}/usr" --host=x86_64 \
     --disable-shared --enable-static \
-    --disable-cxx --disable-examples
+    --disable-examples
 
   make
 }
@@ -33,7 +33,7 @@ build() {
 package() {
   cd libconfig-$pkgver
 
-  source /opt/pacbrew/ps4/toolchain/ps4vars.sh
+  source /opt/pacbrew/ps4/orbisdev/ps4vars.sh
 
   make DESTDIR="$pkgdir" install
   
