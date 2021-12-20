@@ -25,7 +25,8 @@ build() {
 
   ./configure --prefix="${ORBISDEV}/usr" --host=x86_64 \
     --disable-shared --enable-static \
-    --disable-examples
+    --disable-examples \
+    CXXFLAGS="${CXXFLAGS} -std=c++11 -frtti -fexceptions"
 
   make
 }
