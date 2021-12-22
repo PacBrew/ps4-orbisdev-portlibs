@@ -20,7 +20,7 @@ build() {
 
   mkdir build && cd build
 
-  orbis-cmake -G"Unix Makefiles" \
+  orbis-cmake -G "Unix Makefiles" \
     -DCMAKE_INSTALL_PREFIX=$ORBISDEV/usr \
     -DBUILD_TESTS=OFF -DBUILD_SHARED_LIBS=OFF -DBUILD_STATIC_LIBS=ON \
     -DBUILD_TESTING=OFF \

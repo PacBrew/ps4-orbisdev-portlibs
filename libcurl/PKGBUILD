@@ -27,6 +27,19 @@ build() {
     --without-ssl --without-polar-ssl --without-cyassl --without-wolfssl \
     --without-mbedtls --without-libpsl --without-libgsasl
 
+  # TODO: fix this...
+  sed -i 's|#define HAVE_FREEADDRINFO|//#define HAVE_FREEADDRINFO|g' lib/curl_config.h
+  sed -i 's|#define HAVE_GETADDRINFO|//#define HAVE_GETADDRINFO|g' lib/curl_config.h
+  sed -i 's|#define HAVE_IF_NAMETOINDEX|//#define HAVE_IF_NAMETOINDEX|g' lib/curl_config.h
+  sed -i 's|#define HAVE_GETHOSTBYNAME_R|//#define HAVE_GETHOSTBYNAME_R|g' lib/curl_config.h
+  sed -i 's|#define HAVE_GETPWUID_R|//#define HAVE_GETPWUID_R|g' lib/curl_config.h
+  sed -i 's|#define HAVE_GMTIME_R|//#define HAVE_GMTIME_R|g' lib/curl_config.h
+  sed -i 's|#define HAVE_FNMATCH|//#define HAVE_FNMATCH|g' lib/curl_config.h
+  sed -i 's|#define HAVE_GETHOSTBYNAME|//#define HAVE_GETHOSTBYNAME|g' lib/curl_config.h
+  sed -i 's|#define HAVE_GETPWUID|//#define HAVE_GETPWUID|g' lib/curl_config.h
+  # TODO: fix this more...
+  sed -i 's|h = gethostbyname((void \*)hostname);|h = NULL; free(buf);|g' lib/hostip4.c
+
   make -C lib
 
 }
