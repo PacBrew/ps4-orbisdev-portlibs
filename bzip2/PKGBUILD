@@ -1,6 +1,6 @@
 # Maintainer: cpasjuste <cpasjuste@gmail.com>
 
-pkgname=('ps4-orbisdev-bzip2')
+pkgname=ps4-orbisdev-bzip2
 pkgver=1.0.6
 pkgrel=1
 pkgdesc="A high-quality data compression program"

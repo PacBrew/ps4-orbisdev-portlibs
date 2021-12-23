@@ -2,7 +2,7 @@
 
 pkgname=ps4-orbisdev-glm
 pkgver=0.9.9.8
-pkgrel=2
+pkgrel=1
 pkgdesc='OpenGL Mathematics (GLM) header only C++ library'
 arch=('any')
 url='https://github.com/g-truc/glm'
